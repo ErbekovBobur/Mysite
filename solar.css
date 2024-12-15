@@ -1,0 +1,75 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+.sar {
+ width: 200px;
+ height: 200px;
+ overflow: hidden;
+ border-radius: 50%;
+ box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2), 
+              -2px -2px 5px rgba(255, 255, 255, 0.6);
+              position: relative;
+}
+ .front, .back {
+  width: 1000px;
+  height: 200px;
+  background: url("././worldmap-1.svg");
+  background-position:0% 0%;
+  background-size: cover;
+  animation:rot 5s linear infinite;
+  overflow: hidden;
+  position: absolute;
+  z-index: 3;
+}
+.mid {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  background: rgba(10,	117,	173, 0.5);
+  z-index: 2;
+}
+.back {
+  background-position: 0 -220px;
+  animation: rev 5s linear infinite;
+  z-index: 1;
+}
+.left {
+  width: 30px;
+  height: 200px;
+  border: 1px solid black;
+  /*border-top-left-radius: 0 50%;*/
+  border-top-right-radius:100% 30%;
+  border-bottom-right-radius:100% 30%;
+}
+.left-inner {
+  width: 1000px;
+  height: 200px;
+  background: url('././worldmap-1.svg') repeat-x;
+  background-size: 100%;
+  animation: rot1 1s linear infinite;
+}
+
+@keyframes rotate {
+  0%{transform: translateX(-800px)}
+  100% {
+    transform: translateX(-326px)
+  }
+}
+@keyframes rot {
+  0% {
+    transform: translateX(-47.5%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+@keyframes rev {
+  0% {
+    transform: translateX(0%);
+    
+  } 100% {
+    transform: translateX(-47.5%);
+    
+  }
+}
